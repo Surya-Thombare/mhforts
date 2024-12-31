@@ -42,8 +42,10 @@ export default async function FortsPage() {
               </p>
             </div>
             <Button size="lg" className="hidden sm:flex items-center gap-2" variant="secondary">
-              <PlusCircle className="h-5 w-5" />
-              Add New Fort
+              <a href="/forts/new" className="gap-2">
+                <PlusCircle className="h-5 w-5" />
+                Add New Fort
+              </a>
             </Button>
           </div>
         </div>
