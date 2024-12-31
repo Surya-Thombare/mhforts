@@ -4,6 +4,7 @@ import { FortsContainer } from '@/components/FortsContainer';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { PlusCircle } from 'lucide-react';
+import Link from 'next/link';
 
 export const revalidate = 3600;
 
@@ -42,10 +43,10 @@ export default async function FortsPage() {
               </p>
             </div>
             <Button size="lg" className="hidden sm:flex items-center gap-2" variant="secondary">
-              <a href="/forts/new" className="gap-2">
+              <Link href="/forts/new" className="gap-2">
                 <PlusCircle className="h-5 w-5" />
                 Add New Fort
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
