@@ -30,7 +30,7 @@ export default async function FortsPage() {
               { label: 'Total Forts', value: forts.length },
               { label: 'Hill Forts', value: forts.filter(f => f.type === 'Hill Fort').length },
               { label: 'Sea Forts', value: forts.filter(f => f.type === 'Sea Fort').length },
-            ].map((stat, i) => (
+            ].map((stat) => (
               <div
                 key={stat.label}
                 className="bg-card rounded-xl p-6 text-center transform hover:-translate-y-1 transition-transform duration-300 shadow-lg"
