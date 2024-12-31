@@ -1,4 +1,4 @@
-import { supabase } from './supabase/supabase';
+import { supabase } from '@/lib/supabase';
 
 export async function uploadFiles(files: File[], path: string) {
   const uploadPromises = files.map(async (file) => {
