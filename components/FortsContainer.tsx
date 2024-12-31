@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { FortCard } from '@/components/FortCard';
 import { FortsFilter } from '@/components/FortsFilter';
-import { Database } from '@/lib/supabase';
+import { Database } from '@/lib/supabase/supabase';
 // import { Skeleton } from '@/components/ui/skeleton';
 
 type Fort = Database['public']['Tables']['forts']['Row'];
@@ -70,8 +70,8 @@ export function FortsContainer({ initialForts }: FortsContainerProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {filteredForts.length > 0 ? (
-          filteredForts.map((fort) => (
-            <FortCard key={fort.id} fort={fort} />
+          filteredForts.map((fort, i: number) => (
+            <FortCard key={fort.id} fort={fort} index={i} />
           ))
         ) : (
           <div className="col-span-full text-center py-10">

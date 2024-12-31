@@ -25,6 +25,20 @@ const nextConfig: NextConfig = {
         pathname: '/**',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'shorturl.at',
+        port: '',
+        pathname: '/**',
+        search: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'tinyurl.com',
+        port: '',
+        pathname: '/**',
+        search: '',
+      },
     ],
   },
 };

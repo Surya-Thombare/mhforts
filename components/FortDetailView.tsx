@@ -2,7 +2,7 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Database } from '@/lib/supabase';
+import { Database } from '@/lib/supabase/supabase';
 import { MapPin, Calendar, Compass, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
