@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Search, MapPin } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { Input } from './ui/input';
 import {
   Select,
@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { Database } from '@/lib/supabase/supabase';
+import { Database } from '@/lib/supabase';
 import { FortCard } from './FortCard';
 
 type Fort = Database['public']['Tables']['forts']['Row'];
