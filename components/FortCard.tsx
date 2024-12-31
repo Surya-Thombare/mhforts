@@ -7,7 +7,7 @@ import { MapPin, Mountain, Compass } from 'lucide-react';
 import { Badge } from './ui/badge';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
-import { Database } from '@/lib/supabase/supabase';
+import { Database } from '@/lib/supabase';
 
 type Fort = Database['public']['Tables']['forts']['Row'];
 
