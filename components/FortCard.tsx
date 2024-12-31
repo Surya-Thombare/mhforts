@@ -30,63 +30,63 @@ export function FortCard({ fort }: FortCardProps) {
   const images = Array.isArray(imageArray) ? imageArray : [];
 
   return (
-    <Link href={`/forts/${fort.id}`}>
-      <Card className="group relative bg-white dark:bg-zinc-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
-        <div className="relative aspect-auto overflow-hidden">
-          {images.length > 0 ? (
-            <Carousel className="w-full h-full">
-              <CarouselContent>
-                {images.map((image, index) => (
-                  <CarouselItem key={index} className="relative h-full">
-                    <div className="relative w-full h-48">
-                      <Image
-                        src={image == "" ? defaultImage : image}
-                        alt={`${fort.name} - Image ${index + 1}`}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        priority={index === 0}
-                        onError={(e) => {
-                          // Fallback to default image on error
-                          const target = e.target as HTMLImageElement;
-                          target.src = defaultImage;
-                        }}
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              {images.length > 1 && (
-                <>
-                  <CarouselPrevious className="left-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <CarouselNext className="right-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </>
-              )}
-            </Carousel>
-          ) : (
-            <div className="relative w-full h-48 bg-zinc-100 dark:bg-zinc-700 flex items-center justify-center">
-              <Image
-                src={defaultImage}
-                alt={fort.name}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                <Mountain className="h-12 w-12 text-white" />
-              </div>
+    <Card className="group relative bg-white dark:bg-zinc-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
+      <div className="relative aspect-auto overflow-hidden">
+        {images.length > 0 ? (
+          <Carousel className="w-full h-full">
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index} className="relative h-full">
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={image == "" ? defaultImage : image}
+                      alt={`${fort.name} - Image ${index + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority={index === 0}
+                      onError={(e) => {
+                        // Fallback to default image on error
+                        const target = e.target as HTMLImageElement;
+                        target.src = defaultImage;
+                      }}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            {images.length > 1 && (
+              <>
+                <CarouselPrevious className="left-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <CarouselNext className="right-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </>
+            )}
+          </Carousel>
+        ) : (
+          <div className="relative w-full h-48 bg-zinc-100 dark:bg-zinc-700 flex items-center justify-center">
+            <Image
+              src={defaultImage}
+              alt={fort.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+              <Mountain className="h-12 w-12 text-white" />
             </div>
-          )}
-          <Badge
-            variant={
-              fort.type === 'Hill Fort' ? 'default' :
-                fort.type === 'Sea Fort' ? 'secondary' : 'outline'
-            }
-            className="absolute top-4 right-4 shadow-lg"
-          >
-            {fort.type}
-          </Badge>
-        </div>
+          </div>
+        )}
+        <Badge
+          variant={
+            fort.type === 'Hill Fort' ? 'default' :
+              fort.type === 'Sea Fort' ? 'secondary' : 'outline'
+          }
+          className="absolute top-4 right-4 shadow-lg"
+        >
+          {fort.type}
+        </Badge>
+      </div>
+      <Link href={`/forts/${fort.id}`}>
 
         <div className="p-4">
           <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
@@ -114,7 +114,7 @@ export function FortCard({ fort }: FortCardProps) {
             </p>
           )}
         </div>
-      </Card>
-    </Link>
+      </Link>
+    </Card>
   );
 }

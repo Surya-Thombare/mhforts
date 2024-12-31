@@ -9,9 +9,10 @@ import {
 } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { MapPin, Mountain, History, Calendar, IndianRupee } from 'lucide-react';
+import { MapPin, Mountain, History, Calendar, IndianRupee, ArrowLeft } from 'lucide-react';
 import { Key } from 'react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import Link from 'next/link';
 
 async function getFort(id: string) {
   const { data: fort, error } = await supabase
@@ -32,11 +33,21 @@ export default async function FortDetail({ params }: { params: Promise<{ id: str
   const videos = Array.isArray(fort.videos) ? fort.videos : [];
 
 
-  console.log(images, 'images')
+  console.log(fort, 'images')
+
+  const defaultImage = "https://rfumhyjerjvqjxownxpc.supabase.co/storage/v1/object/public/fortimage/rajmachi2.jpg";
+
 
   return (
     <div className="container py-8">
       <div className="max-w-6xl mx-auto">
+        <Link
+          href="/forts"
+          className="flex items-center text-muted-foreground hover:text-primary transition-colors mb-4"
+        >
+          <ArrowLeft className="h-4 w-4 mr-2" />
+          Back to Forts
+        </Link>
         {/* Hero Section */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2">{fort.name}</h1>
@@ -64,11 +75,11 @@ export default async function FortDetail({ params }: { params: Promise<{ id: str
                   {videos?.length > 0 && <TabsTrigger value="videos">Videos</TabsTrigger>}
                 </TabsList>
                 <TabsContent value="images">
-                  {images?.length === 1 ? (
+                  {images?.length === 0 ? (
 
                     <div className="relative aspect-video">
                       <Image
-                        src={images[0] || '/placeholder.jpg'}
+                        src={images[0] || defaultImage}
                         alt={`${fort.name}`}
                         fill
                         className="object-cover rounded-lg"
