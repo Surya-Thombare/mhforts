@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { FortCard } from '@/components/FortCard';
 import { FortsFilter } from '@/components/FortsFilter';
-import { Database } from '@/lib/supabase/supabase';
+import { Database } from '@/lib/supabase';
 // import { Skeleton } from '@/components/ui/skeleton';
 
 type Fort = Database['public']['Tables']['forts']['Row'];
