@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { supabase } from '@/lib/supabase';
 import { HeroSection } from '@/components/HeroSection';
 import { FortGrid } from '@/components/FortGrid';
+import { NavbarDemo } from '@/components/topNavbar';
 // import { Button } from '@/components/ui/button';
 // import Link from 'next/link';
 
@@ -18,6 +19,7 @@ export default async function FortsPage() {
 
   return (
     <main className="min-h-screen">
+      <NavbarDemo />
       {/* Hero Section */}
       <HeroSection />
 
