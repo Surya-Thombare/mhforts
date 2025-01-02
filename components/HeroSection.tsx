@@ -122,12 +122,13 @@ import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "@/components/images-slider";
 import { ChevronDown } from "lucide-react";
+import { HeroTitle } from "./heroTitle";
 
 export function HeroSection() {
   const images = [
     "https://shorturl.at/qandq",
-    "https://shorturl.at/N4ZlB",
-    "https://shorturl.at/qandq",
+    "https://rfumhyjerjvqjxownxpc.supabase.co/storage/v1/object/public/fortimage/fort.webp",
+    "https://rfumhyjerjvqjxownxpc.supabase.co/storage/v1/object/public/fortimage/fort2.jpg",
   ];
 
   const scrollToContent = () => {
@@ -154,18 +155,9 @@ export function HeroSection() {
         }}
         className="z-50 flex flex-col justify-center items-center"
       >
-        <motion.h1 className="font-bold text-4xl md:text-6xl text-center text-white mb-6 animate-fade-in bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
-          {/* <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in"> */}
-          Explore Maharashtra&apos;s Majestic Forts
-          {/* </h1> */}
-        </motion.h1>
-        <motion.p className="text-xl text-center text-gray-200 mx-auto mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
 
-          {/* <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-8"> */}
-          Discover the historical fortifications that showcase our rich heritage and architectural marvel
-          {/* </p> */}
-        </motion.p>
-        <button onClick={scrollToContent} className="px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4">
+        <HeroTitle />
+        <button onClick={scrollToContent} className="px-4 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full">
           {/* <span>Join now →</span> */}
           <ChevronDown className="h-6 w-6 text-white" />
           <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
