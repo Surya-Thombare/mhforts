@@ -22,7 +22,7 @@ export function HeroTitle() {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center h-[40rem] ">
+    <div className="flex flex-col items-center justify-center h-[30rem] ">
       <TypewriterEffect words={words} />
       <p className="text-neutral-600 dark:text-neutral-200 text-base">
         Discover the historical fortifications that showcase our rich heritage and architectural marvel
