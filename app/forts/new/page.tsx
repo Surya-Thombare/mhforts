@@ -13,7 +13,7 @@ import Link from "next/link";
 
 export default function NewFortPage() {
   return (
-    <div className="container max-w-6xl py-8">
+    <div className="container max-w-6xl py-8 m-auto">
       <div className="mb-8">
         <Link
           href="/forts"

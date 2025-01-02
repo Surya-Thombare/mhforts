@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/navbar-menu";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function NavbarDemo() {
 
@@ -13,7 +14,7 @@ export function NavbarDemo() {
       ([entry]) => {
         setIsVisible(!entry.isIntersecting);
       },
-      { threshold: 0.1 } // Adjust threshold as needed
+      { threshold: 1 } // Adjust threshold as needed
     );
 
     if (heroRef.current) {
@@ -51,6 +52,12 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/web-dev">Share your trip Experience</HoveredLink>
           </div>
         </MenuItem>
+        <Link href={"/forts/new"}>
+
+          <MenuItem setActive={setActive} active={active} item="Add fort">
+
+          </MenuItem>
+        </Link>
         <MenuItem setActive={setActive} active={active} item="Image Gallery">
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
