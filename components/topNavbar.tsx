@@ -43,15 +43,15 @@ function Navbar({ className }: { className?: string }) {
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
+        <MenuItem setActive={setActive} active={active} item="Experiences">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
+            <HoveredLink href="/interface-design">Experience</HoveredLink>
+            <HoveredLink href="/seo">Trip plannings</HoveredLink>
+            {/* <HoveredLink href="/branding">Branding</HoveredLink> */}
+            <HoveredLink href="/web-dev">Share your trip Experience</HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Products">
+        <MenuItem setActive={setActive} active={active} item="Image Gallery">
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Algochurn"
@@ -79,12 +79,12 @@ function Navbar({ className }: { className?: string }) {
             />
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
+        <MenuItem setActive={setActive} active={active} item="About Us">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+            <HoveredLink href="/hobby">Team</HoveredLink>
+            <HoveredLink href="/individual">Contact</HoveredLink>
+            {/* <HoveredLink href="/team">Team</HoveredLink>
+            <HoveredLink href="/enterprise">Enterprise</HoveredLink> */}
           </div>
         </MenuItem>
       </Menu>
