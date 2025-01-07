@@ -22,6 +22,7 @@ import { Card } from '@/components/ui/card';
 import { toast } from '@/hooks/use-toast';
 import { FileUploader } from './FileUploader';
 import { MapPin, Mountain, History, Calendar } from 'lucide-react';
+import { useClerkSupabaseClient } from '@/client';
 
 const MAX_FILE_SIZE = 20971520; // 20MB
 
@@ -48,6 +49,7 @@ const fortSchema = z.object({
 
 export function FortForm() {
   const router = useRouter();
+  const supabaseClient = useClerkSupabaseClient();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const [selectedVideos, setSelectedVideos] = useState<File[]>([]);
@@ -78,8 +80,7 @@ export function FortForm() {
       const videoUrls = selectedVideos.length > 0
         ? await uploadFiles(selectedVideos, 'videos')
         : [];
-
-      const { error } = await supabase
+      const { error } = await supabaseClient
         .from('forts')
         .insert([{
           ...values,
